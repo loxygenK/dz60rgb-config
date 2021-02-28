@@ -5,6 +5,10 @@ RGB_MATRIX_EFFECT(bootup_notify_effect)
 
 #ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
 #include "led_matrix_utility.h"
+#include "color_struct.h"
+
+#define INITIAL_COLOR_CODE 0xA0F8EE
+#define INITIAL_FADE_FRAME 200
 
 static uint8_t __bootup_notify_frame_count;
 
@@ -16,8 +20,16 @@ static void bootup_notify_effect_init(effect_params_t *params) {
 // Continuous
 static bool bootup_notify_effect_run(effect_params_t *params) {
   RGB_MATRIX_USE_LIMITS(led_min, led_max);
-  set_rgb(led_min, led_max, RGB_GRAY(255 - __bootup_notify_frame_count));
-  if(__bootup_notify_frame_count > 230) {
+  set_rgb(
+      led_min, led_max,
+      EXPAND_COLOR(
+        clmultiple(
+          clfromhex(INITIAL_COLOR_CODE),
+          (INITIAL_FADE_FRAME - __bootup_notify_frame_count) / 200.0
+        )
+      )
+  );
+  if(__bootup_notify_frame_count > INITIAL_FADE_FRAME) {
     rgblight_mode(RGB_MATRIX_TYPING_HEATMAP);
   }
   __bootup_notify_frame_count++;
