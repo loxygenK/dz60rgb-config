@@ -5,17 +5,17 @@ My favorite configuration of my favorite keyboard. Updating from time to time.
 ## Derived from
 
 - https://github.com/qmk/qmk_firmware
+  - Used https://github.com/qmk/qmk_firmware/tree/master/keyboards/dztech/dz60rgb/v2
   - Used https://github.com/qmk/qmk_firmware/tree/master/keyboards/dztech/dz60rgb/keymaps/default
 
 ## Command to build
 
 ```bash
 export QMK_FIRM_DIR=$HOME/qmk_firmware # replace to your directory
-export QMK_KEYMAP_NAME=flisan
 git clone https://github.com/loxygenK/dz60rgb-config
 cd dz60rgb-config
-ln -svi $(pwd) $QMK_FIRM_DIR/keyboards/dztech/dz60rgb/keymaps/flisan/$QMK_KEYMAP_NAME
-qmk flash -kb dztech/dz60rgb/v2 -km $QMK_KEYMAP_NAME
+ln -svi $(pwd) $QMK_FIRM_DIR/keyboards/dztech/dz60rgb/keymaps/v2mod
+qmk flash -kb dztech/dz60rgb/v2mod -km flisan
 # Wait for "ERROR: Bootloader not found. Trying again in 5s."
 # And do what you can from below:
 #  1. Press Ctrl+\ (maybe key bindings are overwritten depending on the firmware)
@@ -34,6 +34,7 @@ qmk flash -kb dztech/dz60rgb/v2 -km $QMK_KEYMAP_NAME
 
 https://github.com/qmk/qmk_firmware
 
+- https://github.com/qmk/qmk_firmware/tree/master/keyboards/dztech/dz60rgb/v2 を使用。
 - https://github.com/qmk/qmk_firmware/tree/master/keyboards/dztech/dz60rgb/keymaps/default を使用。
 
 ## ビルドするためのコマンド
@@ -43,8 +44,8 @@ export QMK_FIRM_DIR=$HOME/qmk_firmware # replace to your directory
 export QMK_KEYMAP_NAME=flisan
 git clone https://github.com/loxygenK/dz60rgb-config
 cd dz60rgb-config
-ln -svi $(pwd) $QMK_FIRM_DIR/keyboards/dztech/dz60rgb/keymaps/flisan/$QMK_KEYMAP_NAME
-qmk flash -kb dztech/dz60rgb/v2 -km $QMK_KEYMAP_NAME
+ln -svi $(pwd) $QMK_FIRM_DIR/keyboards/dztech/dz60rgb/keymaps/v2mod
+qmk flash -kb dztech/dz60rgb/v2mod -km flisan
 # "ERROR: Bootloader not found. Trying again in 5s." のメッセージを待ってから、
 # 以下のうち可能なものを実行してください:
 #  1. Ctrl+\ を押す (ファームウェアによってはキーバインドが上書きされてるかも)
