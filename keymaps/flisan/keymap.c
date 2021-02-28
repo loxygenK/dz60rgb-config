@@ -1,4 +1,9 @@
 #include QMK_KEYBOARD_H
+#include "led.c"
+
+/* -------------------------- */
+/*     Key configuration      */
+/* -------------------------- */
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
@@ -23,3 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______,         _______, /*----------------------*/ _______, /*-------------*/ _______, _______, _______, _______, _______
     )
 };
+
+// Adjust decreasing rate for "Typing heatmap"
+#define RGB_MATRIX_TYPING_HEATMAP_DECREASE_DELAY 10
+
