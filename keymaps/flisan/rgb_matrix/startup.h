@@ -4,8 +4,8 @@
 RGB_MATRIX_EFFECT(bootup_notify_effect)
 
 #ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
-#include "led_matrix_utility.h"
-#include "color_struct.h"
+#include "util/utility.h"
+#include "util/color.h"
 
 #define INITIAL_COLOR_CODE 0xA0F8EE
 #define INITIAL_FADE_FRAME 200
