@@ -11,11 +11,10 @@ My favorite configuration of my favorite keyboard. Updating from time to time.
 ## Command to build
 
 ```bash
-export QMK_FIRM_DIR=$HOME/qmk_firmware # replace to your directory
 git clone https://github.com/loxygenK/dz60rgb-config
 cd dz60rgb-config
-ln -svi $(pwd) $QMK_FIRM_DIR/keyboards/dztech/dz60rgb/keymaps/v2mod
-qmk flash -kb dztech/dz60rgb/v2mod -km flisan
+make setup QMK_PATH=~/qmk_firmware # replace to your directory
+make flash
 # Wait for "ERROR: Bootloader not found. Trying again in 5s."
 # And do what you can from below:
 #  1. Press Ctrl+\ (maybe key bindings are overwritten depending on the firmware)
@@ -40,12 +39,10 @@ https://github.com/qmk/qmk_firmware
 ## ビルドするためのコマンド
 
 ```bash
-export QMK_FIRM_DIR=$HOME/qmk_firmware # replace to your directory
-export QMK_KEYMAP_NAME=flisan
 git clone https://github.com/loxygenK/dz60rgb-config
 cd dz60rgb-config
-ln -svi $(pwd) $QMK_FIRM_DIR/keyboards/dztech/dz60rgb/keymaps/v2mod
-qmk flash -kb dztech/dz60rgb/v2mod -km flisan
+make setup QMK_PATH=~/qmk_firmware # 自分の環境のものに置き換えてください
+make flash
 # "ERROR: Bootloader not found. Trying again in 5s." のメッセージを待ってから、
 # 以下のうち可能なものを実行してください:
 #  1. Ctrl+\ を押す (ファームウェアによってはキーバインドが上書きされてるかも)
