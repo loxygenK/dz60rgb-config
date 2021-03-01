@@ -1,7 +1,7 @@
 #ifndef __COLOR_STRUCT_H__
 
 #define __COLOR_STRUCT_H__
-#include "led_matrix_utility.h"
+#include "utility.h"
 
 #define EXPAND_COLOR(color) color.red, color.green, color.blue
 
